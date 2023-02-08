@@ -1,8 +1,8 @@
 import sqlite3
 
 
-merc = ['mercedes','Mercedes', 'Merc', 'MERCEDES', 'MERC','мерседес', 'Мерседес','Мерс', 'МЕРСЕДЕС']
-BMW = ['BMW','Bmw','bmw', 'БМВ','Бмв']
+Mercedec = ['mercedes','Mercedes', 'Merc', 'MERCEDES', 'MERC','мерседес', 'Мерседес','Мерс', 'МЕРСЕДЕС']
+BMW = ['BMW','Bmw','bmw', 'БМВ','Бмв',',бмв']
 Land = ['Land Rover','LAND ROVER','Land','Ленд Ровер','Ленд','Ланд Ровер',]
 volvo =['Volvo', 'VOLVO','Вольво','ВОЛЬВО']
 audi =['Audi','AUDI','ауди','Ауди','АУДИ']
@@ -13,12 +13,15 @@ jag = ['Jaguar','JAGUAR','ягуар','Ягуар','ЯГУАР']
 poisk = input('введите марку авто: ')
 slov ={'merc':['mercedes','Mercedes', 'Merc', 'MERCEDES', 'MERC','мерседес', 'Мерседес','Мерс', 'МЕРСЕДЕС'],
        'BMW': ['BMW','Bmw','bmw', 'БМВ','Бмв']}
+x = int
 for key, val in slov.items():
     if poisk in val:
-        x = key
+        print(key)
 
-with  sqlite3.connect('mydb.db') as mojabaza:
-    cursor = mojabaza.cursor()
-    cursor.execute(" SELECT * FROM myDB WHERE model like '%?%' ", ('x'))
-    for c in cursor:
-        print(c)
+
+# with  sqlite3.connect('mydb.db') as mojabaza:
+#     cursor = mojabaza.cursor()
+#     cursor.execute(" SELECT * FROM myDB")
+#     for c in cursor:
+#         if x in c[2]:
+#             print(c)
