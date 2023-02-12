@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> главная страница </title>
+</head>
+<body>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th> Бренд</th>
+            <th> Артикул </th>
+            <th> модель авто </th>
+            <th> название </th>
+            <th>  цена </th>
+            <hr>
+        </tr>
+         </thead>
+     <tbody>
+        {% for bb in bbs %}
+        <tr class="table-warning">
+            <th scope="row">  {{ bb.id }}</th>
+            <td> {{ bb.brand }}    </td>
+            <td> {{ bb.artikul }}   </td>
+            <td> {{ bb.model }} </td>
+            <td>  {{ bb.title }} </td>
+            <td>  {{ bb.price }} </td>
+
+            <td> <div class="custom-control custom-checkbox">
+  <input type="checkbox" class="custom-control-input" id="customCheck1">
+  <label class="custom-control-label" for="customCheck1">в карзину</label>
+</div>
+
+                            </td>
+
+{% endfor %}
+
+
+     </tbody>
+</body>
+</html>
