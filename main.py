@@ -1,4 +1,3 @@
-import sqlite3
 
 # поиск по марке
 Mercedec = ['mercedes','Mercedes', 'Merc', 'мерс', 'MERCEDES', 'MERC','мерседес', 'Мерседес','Мерс', 'МЕРСЕДЕС']
