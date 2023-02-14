@@ -2,17 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 
+def index(request):
+    return render(request, 'shop2/index.html')
 
-def index1(request):
-    return HttpResponse('Привет лунатикам!!')
-
-
-def index2(request):
-    bbb = Parts.objects.all()
-    return render(request, 'shop2/list.html', {'bbb': bbb})
-
-
-
-    pass
-
-# Create your views here.
+def shop(request):
+    return render(request, 'shop2/shop.html')
