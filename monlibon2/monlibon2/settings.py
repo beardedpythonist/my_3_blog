@@ -39,6 +39,7 @@ INSTALLED_APPS = ['shop2',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+                  'rest_framework',
 ]
 
 MIDDLEWARE = [
