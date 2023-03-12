@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.views.generic import *
 from .models import *
 
-def index(request):
-    return render(request, 'shop2/index.html')
 
-def shop(request):
-    return render(request, 'shop2/shop.html')
+
+
+class PartsView(ListView):
+    model = Parts
+    template_name = 'shop2/index.html'
+    context_object_name = 'parts'
+
