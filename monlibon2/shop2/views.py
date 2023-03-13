@@ -4,25 +4,29 @@ from django.views.generic import *
 from rest_framework.views import APIView
 from rest_framework.response import *
 from rest_framework import generics
+from rest_framework.viewsets import ModelViewSet
 from .models import *
 from .serializer import *
 
 
-
-
-class PartsAPInew(generics.ListCreateAPIView):
+class PartsViewSet(ModelViewSet):
     queryset = Parts.objects.all()
     serializer_class = PartSerializer
 
 
-class PartsAPIUpdate(generics.UpdateAPIView):
-    queryset = Parts.objects.all()
-    serializer_class = PartSerializer
-
-class PartsAPIDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Parts.objects.all()
-    serializer_class = PartSerializer
-
+# class PartsAPInew(generics.ListCreateAPIView):
+#     queryset = Parts.objects.all()
+#     serializer_class = PartSerializer
+#
+#
+# class PartsAPIUpdate(generics.UpdateAPIView):
+#     queryset = Parts.objects.all()
+#     serializer_class = PartSerializer
+#
+# class PartsAPIDetail(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Parts.objects.all()
+#     serializer_class = PartSerializer
+#
 
 
 #
