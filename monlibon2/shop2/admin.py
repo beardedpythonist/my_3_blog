@@ -7,7 +7,6 @@ class PartsAdmin(admin.ModelAdmin) :
 
 
 
-
 admin.site.register(Parts, PartsAdmin)
 admin.site.register(Rubric)
 admin.site.register(Car_name)

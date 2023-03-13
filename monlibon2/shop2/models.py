@@ -11,6 +11,7 @@ class Parts(models.Model):
     class Meta:
         verbose_name_plural = 'Запчасти'
         verbose_name = 'Запчасть'
+        ordering = ['name']
 
 
 class Rubric(models.Model):
