@@ -1,8 +1,8 @@
 from django.db import models
 
-
 class Parts(models.Model):
     name = models.CharField(max_length=50, verbose_name='Наименование')
+    slug = models.SlugField(max_length=50, verbose_name='URL')
     brand = models.CharField(max_length=50, verbose_name='Производитель')
     artikul = models.TextField(null=True, blank=True, verbose_name='Номер')
     price = models.FloatField(null=True, blank=True, verbose_name='цена' )

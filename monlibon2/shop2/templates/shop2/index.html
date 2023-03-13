@@ -9,13 +9,12 @@
 <ul>
 
 запчасти
-    {% for p in parts%}
-
+    {% for p in part %}
     <Li>
-{{ p.artikel }} {{  p.name }}
+         {{ p.artikel }}
+        {{  p.name }}
         <hr>
-        {{ p.price}}
-    </Li>
+        {{ p.price }}    </Li>
 
 {% endfor %}
 

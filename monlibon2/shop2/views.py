@@ -4,14 +4,19 @@ from django.views.generic import *
 from rest_framework.views import APIView
 from rest_framework.response import *
 from rest_framework import generics
-from rest_framework.viewsets import ModelViewSet
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet, mixins, GenericViewSet
 from .models import *
 from .serializer import *
 
 
-class PartsViewSet(ModelViewSet):
-    queryset = Parts.objects.all()
-    serializer_class = PartSerializer
+class PartViewSet(mixins.CreateModelMixin,
+                    mixins.RetrieveModelMixin,
+                    mixins.UpdateModelMixin,
+                    mixins.DestroyModelMixin,
+                    mixins.ListModelMixin,
+                    GenericViewSet):
+        queryset = Parts.objects.all()
+        serializer_class = PartSerializer
 
 
 # class PartsAPInew(generics.ListCreateAPIView):
@@ -58,6 +63,6 @@ class PartsViewSet(ModelViewSet):
 #         return Response({"post": serializer.data})
 
 def index(request):
-    parts = Parts.objects.all()
-    context = {'parts': parts}
+    part = Parts.objects.all()
+    context = {'part': part}
     return render(request, 'shop2/index.html', context)
