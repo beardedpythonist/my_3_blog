@@ -4,9 +4,9 @@ from shop2.views import *
 
 from rest_framework import routers
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 router.register(r'parts',  PartViewSet)
-
+print(router.urls)
 
 urlpatterns = [path('', index),
                path('admin/', admin.site.urls),

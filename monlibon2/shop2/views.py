@@ -1,6 +1,8 @@
 from django.forms import *
 from django.shortcuts import *
 from django.views.generic import *
+from rest_framework.decorators import action
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.views import APIView
 from rest_framework.response import *
 from rest_framework import generics
@@ -12,11 +14,21 @@ from .serializer import *
 class PartViewSet(mixins.CreateModelMixin,
                     mixins.RetrieveModelMixin,
                     mixins.UpdateModelMixin,
-                    mixins.DestroyModelMixin,
                     mixins.ListModelMixin,
                     GenericViewSet):
         queryset = Parts.objects.all()
         serializer_class = PartSerializer
+
+
+        def get_queryset(self):
+            return Parts.objects.all()[0:4]
+        @action(methods=["GET"], detail=True)
+        def rubric(self, request, pk=None):
+            rubs =  Rubric.objects.get(pk=pk)
+            return Response({'rubs': rubs.name})
+
+
+
 
 
 # class PartsAPInew(generics.ListCreateAPIView):

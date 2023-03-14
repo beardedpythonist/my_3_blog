@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 class Parts(models.Model):
@@ -8,6 +9,7 @@ class Parts(models.Model):
     price = models.FloatField(null=True, blank=True, verbose_name='цена' )
     rubric = models.ForeignKey('Rubric', null=True, on_delete=models.PROTECT)
     car_name = models.ForeignKey('Car_name', null=True, on_delete=models.PROTECT)
+    user = models.ForeignKey(User, verbose_name='пользователь', on_delete=models.CASCADE, default=100)
     class Meta:
         verbose_name_plural = 'Запчасти'
         verbose_name = 'Запчасть'
