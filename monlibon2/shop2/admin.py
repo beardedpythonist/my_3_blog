@@ -4,7 +4,7 @@ class PartsAdmin(admin.ModelAdmin) :
     list_display = ('name', 'artikul', 'price', 'rubric', 'car_name')
     list_display_links = ('name', 'price')
     search_fields = ('name', 'price')
-    prepopulated_fields = {'slug': ('name',)}
+
 
 
 

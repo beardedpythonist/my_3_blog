@@ -3,13 +3,12 @@ from django.db import models
 
 class Parts(models.Model):
     name = models.CharField(max_length=50, verbose_name='Наименование')
-    slug = models.SlugField(max_length=50, verbose_name='URL')
     brand = models.CharField(max_length=50, verbose_name='Производитель')
     artikul = models.TextField(null=True, blank=True, verbose_name='Номер')
     price = models.FloatField(null=True, blank=True, verbose_name='цена' )
     rubric = models.ForeignKey('Rubric', null=True, on_delete=models.PROTECT)
     car_name = models.ForeignKey('Car_name', null=True, on_delete=models.PROTECT)
-    user = models.ForeignKey(User, verbose_name='пользователь', on_delete=models.CASCADE, default=100)
+    user = models.ForeignKey(User, verbose_name='пользователь', on_delete=models.CASCADE, default=1)
     class Meta:
         verbose_name_plural = 'Запчасти'
         verbose_name = 'Запчасть'

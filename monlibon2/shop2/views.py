@@ -2,35 +2,45 @@ from django.forms import *
 from django.shortcuts import *
 from django.views.generic import *
 from rest_framework.decorators import action
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.generics import *
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated, IsAdminUser
 from rest_framework.views import APIView
 from rest_framework.response import *
 from rest_framework import generics
 from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet, mixins, GenericViewSet
+
+from shop2.perm import IsOwnerOrReadOnly
 from .models import *
 from .serializer import *
 
 
-class PartViewSet(mixins.CreateModelMixin,
-                    mixins.RetrieveModelMixin,
-                    mixins.UpdateModelMixin,
-                    mixins.ListModelMixin,
-                    GenericViewSet):
-        queryset = Parts.objects.all()
-        serializer_class = PartSerializer
+class PartViewSetCreate(ListCreateAPIView):
+    queryset = Parts.objects.all()
+    serializer_class = PartSerializer
+    permission_classes = (IsAuthenticated,)
 
 
-        def get_queryset(self):
-            return Parts.objects.all()[0:4]
-        @action(methods=["GET"], detail=True)
-        def rubric(self, request, pk=None):
-            rubs =  Rubric.objects.get(pk=pk)
-            return Response({'rubs': rubs.name})
+class PartViewSetCreateUpdate(RetrieveUpdateAPIView):
+    queryset = Parts.objects.all()
+    serializer_class = PartSerializer
+    permission_classes = (IsAuthenticated,)
+
+    # взял код из документации и  создал свой  перм https://www.django-rest-framework.org/api-guide/permissions
+    permission_classes = (IsOwnerOrReadOnly,)
 
 
+class PartViewSetDelete(DestroyAPIView):
+    queryset = Parts.objects.all()
+    serializer_class = PartSerializer
+    permission_classes = (IsAdminUser,)
 
-
-
+#
+# def get_queryset(self):
+#             return Parts.objects.all()[0:4]
+#         @action(methods=["GET"], detail=True)
+#         def rubric(self, request, pk=None):
+#             rubs =  Rubric.objects.get(pk=pk)
+#             return Response({'rubs': rubs.name})
 # class PartsAPInew(generics.ListCreateAPIView):
 #     queryset = Parts.objects.all()
 #     serializer_class = PartSerializer
