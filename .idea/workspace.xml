@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6374688-8731-44b2-9336-55b785d53179" name="Changes" comment="промежуточный коммит">
-      <change afterPath="$PROJECT_DIR$/monlibon2/shop2/perm.py" afterDir="false" />
+    <list default="true" id="a6374688-8731-44b2-9336-55b785d53179" name="Changes" comment="прошел 12 уроков">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monlibon2/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/monlibon2/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monlibon2/monlibon2/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/monlibon2/monlibon2/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monlibon2/monlibon2/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/monlibon2/monlibon2/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monlibon2/shop2/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/monlibon2/shop2/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monlibon2/shop2/migrations/0002_parts_user_alter_parts_slug.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/monlibon2/shop2/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/monlibon2/shop2/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monlibon2/shop2/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/monlibon2/shop2/serializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/monlibon2/shop2/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/monlibon2/shop2/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,7 +99,21 @@
       <option name="project" value="LOCAL" />
       <updated>1678783987913</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="прошел 12 уроков">
+      <created>1678796204618</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678796204618</updated>
+    </task>
+    <task id="LOCAL-00008" summary="прошел 12 уроков">
+      <created>1678796218222</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678796218222</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +132,7 @@
     <MESSAGE value="Остановился на 4 м уроке на половине" />
     <MESSAGE value="все мелкие классы View прошел." />
     <MESSAGE value="промежуточный коммит" />
-    <option name="LAST_COMMIT_MESSAGE" value="промежуточный коммит" />
+    <MESSAGE value="прошел 12 уроков" />
+    <option name="LAST_COMMIT_MESSAGE" value="прошел 12 уроков" />
   </component>
 </project>

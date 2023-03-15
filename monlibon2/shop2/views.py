@@ -26,7 +26,7 @@ class PartViewSetCreateUpdate(RetrieveUpdateAPIView):
     permission_classes = (IsAuthenticated,)
 
     # взял код из документации и  создал свой  перм https://www.django-rest-framework.org/api-guide/permissions
-    permission_classes = (IsOwnerOrReadOnly,)
+    # permission_classes = (IsOwnerOrReadOnly,)
 
 
 class PartViewSetDelete(DestroyAPIView):
@@ -53,8 +53,6 @@ class PartViewSetDelete(DestroyAPIView):
 # class PartsAPIDetail(generics.RetrieveUpdateDestroyAPIView):
 #     queryset = Parts.objects.all()
 #     serializer_class = PartSerializer
-#
-
 
 #
 # class PartsApiView(APIView):
